@@ -2,7 +2,7 @@ import os
 import pandas as pd
 
 # Define the directory containing all CSV files
-directory = r"C:\Users\maxpa\Documents\AMaster\MasterThesis\ARGUS2\ARGUS\misc\data\rawdata"
+directory = r"C:\yourpath\data\rawdata"
 
 # Create an empty DataFrame to store the combined data
 combined_df = pd.DataFrame()
@@ -30,8 +30,8 @@ for filename in os.listdir(directory):
         # Append the DataFrame to the combined DataFrame
         combined_df = pd.concat([combined_df, df], ignore_index=True)
 
-# Remove missing values from specific columns, for example, 'Website address' and 'Number of employees Last avail. yr'
-specific_columns = ['Website address', 'Number of employees Last avail. yr']  # Replace with the actual column names
+# Remove missing values from specific columns, for example, 'Website address'
+specific_columns = ['Website address']  # Replace with all column names, comma separated
 combined_df_cleaned = combined_df.dropna(subset=specific_columns)
 
 # Rename the 'Website address' column to 'URL'
