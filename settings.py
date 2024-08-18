@@ -25,7 +25,7 @@ DNSCACHE_ENABLED = True
 DNSCACHE_SIZE = 1000
 DNS_TIMEOUT = 30
 
-# Access settings from external file
+# Access settings from Argus interactive settings file
 import configparser
 config = configparser.RawConfigParser()
 config.read(r".\bin\settings.txt")
